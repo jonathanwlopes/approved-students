@@ -3,6 +3,7 @@ const approvedStudents = (listStudents, minAverage = 6) => {
   const listApprovedStudents = []
 
   const newListStudents = [...listStudents]
+
   for (let i = 0; i < newListStudents.length; i++) {
     const average = calcAverage(newListStudents[i].subjects)
     newListStudents[i].average = average
@@ -53,11 +54,12 @@ const result = approvedStudents(listStudents)
 printApprovedStudents(result)
 
 function printApprovedStudents(listStudentsApproved) {
-  console.log("Lista de alunos aprovados(a)")
+  console.log("Lista de alunos aprovados(as)")
   listStudentsApproved.forEach((student) => {
+    const { name, average } = student
     console.log(`
-    Nome: ${student.name}
-    Média: ${student.average}
+    Nome: ${name}
+    Média: ${average}
     `)
   })
 }
